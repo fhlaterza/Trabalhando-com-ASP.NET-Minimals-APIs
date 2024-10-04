@@ -1,0 +1,30 @@
+dotnet new web -o minimal_api
+dotnet add package Microsoft.EntityFrameworkCore --version 8.0.3
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.3
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.3
+dotnet add package Pomelo.EntityFrameworkCore.MySql --version 8.0.2
+
+dotnet tool install --global dotnet-ef    (só faz uma única instalação)
+
+dotnet ef migrations add AdministradorMigration
+dotnet ef database update
+
+dotnet ef migrations add AdministradorSeed
+dotnet ef database update
+
+dotnet ef migrations add VeiculoMigration
+dotnet ef database update
+
+
+//Adicionando Swagger
+dotnet add package Swashbuckle.AspNetCore --version 6.8.1
+
+
+- no program CS:
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+// 
