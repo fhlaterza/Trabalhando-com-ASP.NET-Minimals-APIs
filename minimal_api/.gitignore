@@ -103,4 +103,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+ComandosDotnettxt.txt
+
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,dotnetcore,visualstudiocode
