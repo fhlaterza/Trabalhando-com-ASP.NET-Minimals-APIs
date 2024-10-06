@@ -23,6 +23,7 @@ var builder = WebApplication.CreateBuilder(args);
 var key = builder.Configuration.GetSection("Jwt").ToString();
 if(string.IsNullOrEmpty(key)) key = "123456";
 
+// Services 
 builder.Services.AddAuthentication(option => 
 {
     option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

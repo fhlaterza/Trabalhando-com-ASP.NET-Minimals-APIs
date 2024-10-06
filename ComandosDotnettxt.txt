@@ -27,4 +27,24 @@ builder.Services.AddSwaggerGen();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// 
+// pacote JWT
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.3
+
+
+//Criando a Solução
+dotnet new sln 
+dotnet sln add API/minimal_api.csproj
+
+dotnet new list
+
+dotnet new mstest -o Test
+dotnet sln add Test\test.csproj
+
+cd Test
+dotnet add reference ../API/minimal_api.csproj
+
+dotnet test
+
+
+
+
