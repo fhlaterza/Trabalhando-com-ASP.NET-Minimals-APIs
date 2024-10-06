@@ -48,3 +48,41 @@ dotnet test
 
 
 
+
+
+
+
+
+async function login() {
+    const url = 'http://192.168.0.188/administradores/login';
+    const data = {
+        email: 'administrador@teste.com',
+        senha: '123456'
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Accept': '*/*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erro: ${response.status} ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log('Login realizado com sucesso:', result);
+    } catch (error) {
+        console.error('Erro ao realizar login:', error);
+    }
+}
+
+// Chama a função de login
+login();
+
+
+
